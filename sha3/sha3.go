@@ -4,7 +4,7 @@
 
 package sha3
 
-import fmt
+import "fmt"
 
 // spongeDirection indicates the direction bytes are flowing through the sponge.
 type spongeDirection int
