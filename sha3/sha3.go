@@ -4,6 +4,8 @@
 
 package sha3
 
+import fmt
+
 // spongeDirection indicates the direction bytes are flowing through the sponge.
 type spongeDirection int
 
@@ -114,6 +116,7 @@ func (d *state) padAndPermute(dsbyte byte) {
 	// bits are numbered from the LSB upwards, the final bit is the MSB of
 	// the last byte.
 	d.buf[d.rate-1] ^= 0x80
+	fmt.Printf("padded block: %v\n", d.buf)
 	// Apply the permutation
 	d.permute()
 	d.state = spongeSqueezing
